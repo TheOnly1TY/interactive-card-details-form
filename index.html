@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Interactive card details form</title>
+
+  <!-- ===============CSS=================== -->
+  <link rel="stylesheet" href="/assets/style.css">
+
+</head>
+
+<body>
+  <div class="background__wrapper">
+    <div class="card__container">
+      <div class="front__card">
+        <img src="/assets/images/bg-card-front.png" alt="Front Card" id="card__image">
+        <div class="card-text">
+          <img src="/assets/images/card-logo.svg" alt="Card Logo" id="logo">
+          <p class="card__number">
+            0000 0000 0000 0000
+          </p>
+          <div class="card__data">
+            <p class="card-name">Jane Appleseed</p>
+            <p><span class="mon">00</span>/<span class="yr">00</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="back__card">
+        <img src="/assets/images/bg-card-back.png" alt="Back Card" id="card__image">
+        <div class="card-text">
+          <p class="cvc-p">000</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <aside class="main__content">
+    <div class="input-form">
+      <h2>Cardholder Name</h2>
+      <input type="text" placeholder="e.g. Jane Appleseed" name="name" id="name">
+      <p class="error-MSG" id="text__error"></p>
+
+      <h2>Card Number</h2>
+      <input type="tel" maxlength="19" placeholder="e.g. 1234 5678 9123 0000" name="number" id="cardNumber"
+        oninput="formatCardNumber()">
+      <p class="error-MSG" id="num__error"></p>
+
+      <div class="num">
+        <div class="exp">
+          <h2>Exp. Date (MM/YY)</h2>
+          <div class="exp-input">
+            <input type="tel" maxlength="2" name="date" id="month" class="exp__date" placeholder="MM">
+            <input type="tel" maxlength="2" name="date" id="year" class="exp__date" placeholder="YY">
+          </div>
+          <p class="error-MSG" id="exp__error"></p>
+        </div>
+        <div class="cvc">
+          <h2>CVC</h2>
+          <input type="tel" maxlength="3" name="cvc" id="cvc__input" placeholder="e.g. 123">
+          <p class="error-MSG" id="cvc__error"></p>
+        </div>
+      </div>
+      <button class="btn confirm">Confirm</button>
+    </div>
+    <div class="complete hidden">
+      <img src="/assets/images/icon-complete.svg" alt="CheckMark">
+      <h2>Thank you!</h2>
+      <p>We've added your card details</p>
+      <button class="btn continue">Continue</button>
+    </div>
+  </aside>
+</body>
+<!-- =================JS============= -->
+<script src="/assets/index.js"></script>
+
+</html>
